@@ -118,7 +118,7 @@ if __name__ == "__main__":
         target_file_name = sys.argv[1]
     else:
         # Altere aqui para o arquivo padrão que você quer analisar, se nenhum for passado
-        target_file_name = "sistema_zoologico_galactico.py" 
+        target_file_name = "relogio.py" 
 
     print(f"Analisando o arquivo: {target_file_name}")
     plantuml_output = parse_python_for_class_diagram(target_file_name)
