@@ -15,7 +15,7 @@ jobs:
       contents: write # Permite escrever no repositório
 
     env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }} # Chave da API Gemini acessível a todos os passos
+      GEMINI_API_KEY: AIzaSyBh8DnFoxm6aMkzQoJQOq15L4T-gQoM-q8 # Chave da API Gemini acessível a todos os passos
 
     steps:
       - name: Checkout repository
