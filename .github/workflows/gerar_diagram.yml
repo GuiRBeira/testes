@@ -46,10 +46,12 @@ jobs:
         # O script relogio.py fará a chamada à API, gerará o .puml e o .png
         run: python relogio.py
 
+      # Passo Corrigido
       - name: Gerar diagrama de classes sem IA (PlantUML)
-        # O script gerador_diagrama.py fará a análise do código e gerará o .puml e o .png
-        run: python gerador_diagrama.py # Executa o novo script
-
+        run: |
+          # Gera a definição .puml
+          python gerador_diagrama.py
+          plantuml diagrama_classes_manual.puml  # Renderiza o .puml para .png
       - name: Upload artifacts (Diagramas gerados)
         uses: actions/upload-artifact@v4
         with:
