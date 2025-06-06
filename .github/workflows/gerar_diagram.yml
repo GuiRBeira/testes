@@ -61,6 +61,18 @@ jobs:
             diagrama_classes_manual.puml # Caminho para o PlantUML gerado por gerador_diagrama.py
           retention-days: 30
 
+      - name: LISTAR ARQUIVOS (Passo de Diagnóstico)
+        run: ls -lR
+
+      - name: Commit e push dos diagramas gerados
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          # ... resto do seu comando git ...
+          git add diagrama_classes.png diagrama_classes.puml \
+                  diagrama_classes_manual.png diagrama_classes_manual.puml
+      
       - name: Commit e push dos diagramas gerados
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Ou GH_PAT se preferir usar seu PAT
